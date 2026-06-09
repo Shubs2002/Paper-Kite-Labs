@@ -1,0 +1,271 @@
+.contactSection {
+  background-color: #ffffff;
+  color: #111111;
+  min-height: 100vh;
+  padding-top: 80px; 
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 80vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  background: #fafafa;
+  margin-top: 2rem;
+}
+
+.imageSide {
+  flex: 1;
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .imageSide {
+    display: block;
+  }
+}
+
+.contactImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keep the image dark and moody to contrast the white form */
+  filter: grayscale(10%) contrast(1.1);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  /* A dark gradient so the white text is readable */
+  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(250,250,250,1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+.imageTagline {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  max-width: 450px;
+  color: #111; /* Since the right side of the gradient is white, text should be dark */
+  margin-bottom: 0;
+}
+
+/* Adjusting the gradient so the left image is visible but fades into the white form */
+.imageOverlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
+}
+.imageTagline {
+  color: #fff; /* Keep text white because the bottom overlay is dark */
+}
+
+.formSide {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  justify-content: center;
+}
+
+.formHeader {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #111;
+}
+
+.subtitle {
+  color: #666;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+}
+
+.toggleContainer {
+  display: flex;
+  background: #eaeaea;
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 3rem;
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #666;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.toggleBtn.active {
+  color: #111;
+}
+
+.toggleIndicator {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  width: calc(50% - 6px);
+  background: #ffffff;
+  border-radius: 6px;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contentArea {
+  position: relative;
+}
+
+.formArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.input, .textarea {
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: #111;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #aaa;
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  background: #333;
+}
+
+.bookingArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px dashed #ccc;
+}
+
+.bookingIcon {
+  width: 64px;
+  height: 64px;
+  color: #6a1b9a;
+  margin-bottom: 1.5rem;
+}
+
+.bookingTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: #111;
+}
+
+.bookingDesc {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 300px;
+}
+
+.bookingBtn {
+  background: #6a1b9a;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.2);
+}
+
+.bookingBtn:hover {
+  background: #5e118c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(106, 27, 154, 0.3);
+}
+
+@media (max-width: 600px) {
+  .formSide {
+    padding: 2rem;
+  }
+  .container {
+    margin: 1rem;
+    border-radius: 12px;
+  }
+  .contentArea {
+    min-height: 450px;
+  }
+}

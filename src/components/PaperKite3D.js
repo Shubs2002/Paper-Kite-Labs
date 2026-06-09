@@ -335,7 +335,7 @@ function Scene() {
   });
 
   return (
-    <group ref={groupRef} scale={0.85} position={[0, 0.5, 0]}>
+    <group ref={groupRef} scale={1.1} position={[0, 0, 0]}>
       <KiteParticles />
       <TailParticles />
       <AmbientParticles />

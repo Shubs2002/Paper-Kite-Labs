@@ -1,0 +1,173 @@
+.footer {
+  background-color: #111111;
+  color: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+  border-top: 1px solid #222222;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.thinRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.iconTrigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #222222;
+  color: #ffffff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.footer:hover .iconTrigger {
+  background: #333333;
+  transform: scale(1.05);
+}
+
+.expandedContent {
+  overflow: hidden;
+}
+
+.trayInner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #2a2a2a;
+  gap: 4rem;
+}
+
+.trayCol {
+  flex: 1;
+}
+
+.trayHeading {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.trayList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trayList a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.trayList a:hover {
+  color: #aaaaaa;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 0.25rem;
+}
+
+.contactLabel {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #666666;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contactValue {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover .contactValue {
+  color: #888888;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contactValueLink {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactValueLink:hover {
+  color: #888888;
+}
+
+@media (max-width: 768px) {
+  .thinRow {
+    flex-direction: row;
+    height: 80px;
+    padding: 0;
+  }
+  .copyright {
+    display: none; /* Hide copyright on mobile to save space */
+  }
+  .trayInner {
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  .trayHeading {
+    margin-bottom: 1rem;
+  }
+}

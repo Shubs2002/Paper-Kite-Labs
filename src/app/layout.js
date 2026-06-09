@@ -1,5 +1,6 @@
 import { Inter, Lilita_One } from "next/font/google";
 import "./globals.css";
+import KiteCursor from "@/components/KiteCursor";
 
 const inter = Inter({
   variable: "--font-body",
@@ -37,7 +38,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${lilitaOne.variable}`}>
-      <body>{children}</body>
+      <body>
+        <KiteCursor />
+        {children}
+      </body>
     </html>
   );
 }

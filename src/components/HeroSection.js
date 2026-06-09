@@ -32,20 +32,57 @@ export default function HeroSection() {
       {/* Subtle background gradient */}
       <div className={styles.heroBg} />
 
-      {/* Background Text Layer — behind the 3D model */}
-      <div className={styles.bgTextLayer}>
-        <h2 className={styles.bgTextTop}>
-          THINK CREATIVITY?
-        </h2>
-        <h2 className={styles.bgTextBottom}>
-          THINK PAPERKITE
-        </h2>
+      {/* Main Hero Content */}
+      <div className={styles.heroContent}>
+        <h1 className={styles.headline}>
+          {["We", "Build", "Intelligent", "Systems", "for", "Modern", "Businesses"].map((word, index) => (
+            <span key={index}>
+              {word === "Intelligent" ? (
+                <span style={{ whiteSpace: 'nowrap' }}>
+                  <span className={styles.inlineImageWrapper}>
+                    <img 
+                      src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=400&auto=format&fit=crop" 
+                      alt="Intelligent" 
+                      className={styles.inlineImage} 
+                    />
+                  </span>
+                  {' '}
+                  <span 
+                    className={styles.word} 
+                    style={{ animationDelay: `${0.2 + index * 0.15}s` }}
+                  >
+                    {word}
+                  </span>
+                </span>
+              ) : (
+                <span 
+                  className={styles.word} 
+                  style={{ animationDelay: `${0.2 + index * 0.15}s` }}
+                >
+                  {word}
+                </span>
+              )}
+              {' '}
+              {(word === "Intelligent" || word === "Modern") && <br />}
+            </span>
+          ))}
+        </h1>
+        <p className={styles.subtitle}>
+          From messy manual workflows to smart, scalable software — Paperkite Labs turns your operational challenges into competitive advantages.
+        </p>
+        <div className={styles.buttonGroup}>
+          <a href="#work" className={styles.primaryButton}>See Our Work</a>
+          <a href="#contact" className={styles.secondaryButton}>Talk to Us</a>
+        </div>
       </div>
 
       {/* 3D Paper Kite Model — centered, above bg text */}
       <div className={styles.modelContainer}>
         <PaperKite3D />
       </div>
+
+      {/* Bottom partition line */}
+      <div className={styles.partitionLine}></div>
 
       {/* Bottom tagline */}
       <div className={styles.tagline}>
